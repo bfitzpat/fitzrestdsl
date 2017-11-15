@@ -21,52 +21,27 @@
     <jboss.fuse.bom.version>6.3.0.redhat-187</jboss.fuse.bom.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.jboss.fuse.bom</groupId>
-        <artifactId>jboss-fuse-parent</artifactId>
-        <version>${jboss.fuse.bom.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
+      <version>${camel.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
-      <artifactId>camel-blueprint</artifactId>
+      <artifactId>camel-spring</artifactId>
+      <version>${camel.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-netty-http</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
+      <version>${camel.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
-      <artifactId>camel-test-blueprint</artifactId>
+      <artifactId>camel-test-spring</artifactId>
+      <version>${camel.version}</version>
       <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>org.apache.felix.fileinstall</artifactId>
-          <groupId>org.apache.felix</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
   </dependencies>
   <repositories>
@@ -132,7 +107,7 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>sayspring</Bundle-SymbolicName>
-            <Bundle-Name>Empty Camel Spring Example [sayspring]</Bundle-Name></instructions></configuration>
+            <Bundle-Name>say-spring [sayspring]</Bundle-Name></instructions></configuration>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
