@@ -3,10 +3,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany</groupId>
-  <artifactId>say-blueprint</artifactId>
+  <artifactId>say-more-blueprint</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>Say Rest DSL Example Blueprint</name>
+  <name>Say More Rest DSL Example Blueprint</name>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -34,6 +34,11 @@
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-netty-http</artifactId>
+      <version>${camel.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-jackson</artifactId>
       <version>${camel.version}</version>
     </dependency>
     <dependency>
@@ -111,8 +116,8 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Bundle-SymbolicName>sayblueprint</Bundle-SymbolicName>
-            <Bundle-Name>Say Rest DSL Example Blueprint [say-blueprint]</Bundle-Name></instructions></configuration>
+            <Bundle-SymbolicName>saymoreblueprint</Bundle-SymbolicName>
+            <Bundle-Name>Say More Rest DSL Example Blueprint [say-more-blueprint]</Bundle-Name></instructions></configuration>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -139,5 +144,5 @@
       </plugin>
     </plugins>
   </build>
-  <description>Basic Rest DSL example in Blueprint using the Camel netty-http component. </description>
+  <description>More advanced Rest DSL example in Blueprint using the Camel netty-http component.</description>
 </project>

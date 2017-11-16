@@ -15,7 +15,7 @@
     </license>
   </licenses>
   <properties>
-    <camel.version>2.17.0.redhat-630187</camel.version>
+    <camel.version>2.21.0.fuse-000008</camel.version>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <version.maven-bundle-plugin>3.2.0</version.maven-bundle-plugin>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
