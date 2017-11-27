@@ -29,6 +29,7 @@
       While it is not required to assign id's to the <camelContext/> and <route/> elements, it is a good idea
       to set those for runtime management purposes (logging, JMX MBeans, ...)
     -->
+	<bean class="com.mycompany.GreeterService" id="GreeterService"/>
     <camelContext id="_context1" xmlns="http://camel.apache.org/schema/blueprint">
         <restConfiguration component="netty-http" host="localhost" port="10000"/>
         <rest path="/say">
@@ -38,9 +39,9 @@
             <get consumes="application/json" uri="/bye/{name}">
                 <to uri="direct:service-bye"/>
             </get>
-            <get consumes="application/json" uri="/greeter/{name}">
+            <post uri="/greeter">
                 <to uri="direct:service-greeter"/>
-            </get>
+            </post>
         </rest>
         <route id="service-hello">
             <from id="_from1" uri="direct:service-hello"/>
@@ -51,7 +52,7 @@
         <route id="service-bye">
             <from id="_from2" uri="direct:service-bye"/>
             <transform id="_transform1">
-            	<simple>Bye ${header.name}</simple>
+                <simple>Bye ${header.name}</simple>
             </transform>
         </route>
         <route id="service-greeter">
